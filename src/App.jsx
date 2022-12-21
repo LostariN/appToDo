@@ -51,7 +51,8 @@ function App() {
     setFilter(filter)
   }
   return (
-    <div className="bg-gray-300 bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat min-h-screen">
+    <div className="dark:bg-gray-900 bg-gray-300 bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat min-h-screen dark:bg-[url('./assets/images/bg-mobile-dark.jpg')]
+    transition-all duration-500">
       <Header />
       <main className="container mx-auto px-4 mt-8">
         <TodoCreate addTodo={addTodo} />
@@ -60,7 +61,7 @@ function App() {
         <TodoFilter changeFilter={changeFilter} filter={filter} />
       </main >
 
-      <footer className='text-center p-4 mt-8'> Drag and drop to reorder list</footer>
+      <footer className='text-center p-4 mt-8 dark:text-gray-400 '> Drag and drop to reorder list</footer>
     </div>
   )
 }
