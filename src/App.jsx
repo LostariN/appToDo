@@ -3,12 +3,20 @@ import TodoComputed from './components/TodoComputed'
 import TodoCreate from './components/TodoCreate'
 import TodoFilter from './components/TodoFilter'
 import TodoList from './components/TodoList'
-import { initialStateTodos } from './initialStateTodos'
-import { useState } from 'react'
+// import { initialStateTodos } from './initialStateTodos'
+import { useEffect, useState } from 'react'
+
+
+const initialStateTodos = JSON.parse(localStorage.getItem('todos')) || []
 
 function App() {
   const [todos, setTodos] = useState(initialStateTodos)
   const [filter, setFilter] = useState('all')
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+
+  }, [todos])
 
   const addTodo = (title) => {
     const newTodo = {
