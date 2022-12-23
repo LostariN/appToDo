@@ -60,9 +60,10 @@ function App() {
   }
   return (
     <div className="dark:bg-gray-900 bg-gray-300 bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat min-h-screen dark:bg-[url('./assets/images/bg-mobile-dark.jpg')]
-    transition-all duration-500">
+    transition-all duration-1000 md:bg-[url('./assets/images/bg-desktop-dark.jpg')]
+    md:dark:bg-[url('./assets/images/bg-desktop-dark.jpg')]">
       <Header />
-      <main className="container mx-auto px-4 mt-8">
+      <main className="container mx-auto px-4 mt-8 md:max-w-xl">
         <TodoCreate addTodo={addTodo} />
         <TodoList todos={filterTodos()} removeTodo={removeTodo} updateTodo={updateTodo} />
         <TodoComputed contadorCompletados={contadorCompletados} clearCompleted={clearCompleted} />
